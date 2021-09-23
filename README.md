@@ -11,4 +11,4 @@ Plugin UHC per Minecraft 1.16.5
  - /skull 
  - /skull *jugador1*
 # Disseny codi
-![Diagrama plugin uhc](http://arnaumas.me/img/imatge-github-diagrama-plugin-uhc.png)
+![Diagrama plugin uhc](imatge-github-diagrama-plugin-uhc.png)
