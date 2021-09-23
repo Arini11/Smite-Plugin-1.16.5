@@ -26,7 +26,6 @@ public class UhcMain extends JavaPlugin{
         
 	}
 	
-	// Retorna una instància de la classe Main, que necessiten alguns mètodes per ésser cridats.
 	public static UhcMain getInstance() {
 		return instance;
 	}
