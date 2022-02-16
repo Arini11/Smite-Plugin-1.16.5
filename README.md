@@ -1,5 +1,7 @@
-# UHC-Plugin-1.16.5 [En procés...]
-Plugin UHC per Minecraft 1.16.5
+# Smite Plugin Minecraft [En procés...]
+Plugin Smite per Minecraft 1.16.5
+# Seguiment actualitzacions YouTube
+https://www.youtube.com/channel/UC7wRVtfHzDwSuL1DJ5qy9Ag
 # Comandos
 ## Teams
  - /teams create *equip1* 
