@@ -19,13 +19,15 @@ public class SkullCommand {
 			return;
 		}
 		Player p = (Player) sender;
-		if (args.length == 0) {
+		System.out.println("length"+args.length);
+		if (args.length == 1) {
 			p.sendMessage(UhcMain.color("&6Has rebut el teu cap :D"));
 			p.getInventory().addItem(getPlayerHead(p.getName()));
 			return;
+		} else if (args.length > 1){
+			p.sendMessage(UhcMain.color("&6Has rebut el cap de ") + args[1]);
+			p.getInventory().addItem(getPlayerHead(args[1]));
 		}
-		p.sendMessage(UhcMain.color("&6Has rebut el cap de ") + args[0]);
-		p.getInventory().addItem(getPlayerHead(args[0]));
 	}
 
 	@SuppressWarnings({ "deprecation", "unused" })

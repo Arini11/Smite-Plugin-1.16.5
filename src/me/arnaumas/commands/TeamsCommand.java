@@ -29,14 +29,14 @@ public class TeamsCommand {
 					+ "     /teams leave &Nnom_jugador&R &Nnom_equip&R\n"
 					+ "     /teams list"));
 			} else {
-				switch(args[0].toLowerCase()) {
+				switch(args[1].toLowerCase()) {
 					case "create": {
-						teams.crearEquip(args[1]);
+						teams.crearEquip(args[2]);
 						teams.saveConfig();
 						break;
 					}
 					case "delete": {
-						if(!teams.eliminarEquip(args[1])) {
+						if(!teams.eliminarEquip(args[2])) {
 							sender.sendMessage("§4No existeix cap equip amb aquest nom");
 						}
 						teams.saveConfig();
@@ -47,7 +47,7 @@ public class TeamsCommand {
 						break;
 					}
 					case "join": {
-						String msgError = teams.afegirJugador(args[1], args[2]);
+						String msgError = teams.afegirJugador(args[2], args[3]);
 						if(!msgError.equals("")) 
 							sender.sendMessage("§4"+msgError);
 						teams.saveConfig();
@@ -55,7 +55,7 @@ public class TeamsCommand {
 					}
 					case "leave": {
 						Bukkit.getLogger().severe("leaveeee");
-						String msgError = teams.treureJugador(args[1], args[2]);
+						String msgError = teams.treureJugador(args[2], args[3]);
 						if(!msgError.equals("")) 
 							Bukkit.getLogger().severe("§4"+msgError);
 						teams.saveConfig();
@@ -68,52 +68,7 @@ public class TeamsCommand {
 			}
 		// SI S'EXECUTA DES DE CONSOLA
 		} else {
-			if(args.length == 0) {
-				Bukkit.getLogger().info(UhcMain.color(
-					  "&LOpcions:&R create, list, join, leave\n"
-					+ "     /teams create &Nnom_equip&R\n"
-					+ "     /teams delete &Nnom_equip&R\n"
-					+ "     /teams join &Nnom_jugador&R &Nnom_equip&R\n"
-					+ "     /teams leave &Nnom_jugador&R &Nnom_equip&R\n"
-					+ "     /teams list"));
-			} else {
-				switch(args[0].toLowerCase()) {
-					case "create": {
-						teams.crearEquip(args[1]);
-						teams.saveConfig();
-						break;
-					}
-					case "delete": {
-						if(!teams.eliminarEquip(args[1])) {
-							Bukkit.getLogger().info("§4No existeix cap equip amb aquest nom");
-						}
-						teams.saveConfig();
-						break;
-					}
-					case "list": {
-						Bukkit.getLogger().info(UhcMain.color(teams.getEquips()));
-						break;
-					}
-					case "join": {
-						String msgError = teams.afegirJugador(args[1], args[2]);
-						if(!msgError.equals("")) 
-							Bukkit.getLogger().severe("§4"+msgError);
-						teams.saveConfig();
-						break;
-					}
-					case "leave": {
-						Bukkit.getLogger().severe("leaveeee");
-						String msgError = teams.treureJugador(args[1], args[2]);
-						if(!msgError.equals("")) 
-							Bukkit.getLogger().severe("§4"+msgError);
-						teams.saveConfig();
-						break;
-					}
-					default: {
-						Bukkit.getLogger().severe("No es reconeix el comando");
-					}
-				}
-			}
+			Bukkit.getLogger().severe("§4No es pot executar des de consola");
 		}
 	}
 

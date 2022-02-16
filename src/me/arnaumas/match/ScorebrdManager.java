@@ -50,15 +50,18 @@ public class ScorebrdManager {
 		}
 	}
 
-
-	
+	/* Refreshes the scoreboard sidebar
+	* @param minutes - the minutes that will be displayed in the sidebar
+	* @param seconds - the seconds that will be displayed in the sidebar
+	* @param episode - the episode that will be displayed in the sidebar
+	* @param total - the total time that the match has been going on */
 	static void refreshSidebar() {
 		Bukkit.broadcastMessage("refresh sidebar");
 		infoObjective.setDisplaySlot(DisplaySlot.SIDEBAR);
-		//timer = infoObjective.getScore( ChatColor.GRAY + "  Â»  " + PluginStrings.SCOREBOARD_TIME_LEFT.toString() + ChatColor.GRAY + minutes + ":" + seconds);
-		//totalTime = infoObjective.getScore( ChatColor.GRAY + "  Â»  " + PluginStrings.SCOREBOARD_TOTAL_TIME.toString() + ChatColor.GRAY + total);
-		//episodeScore = infoObjective.getScore( ChatColor.GRAY + "  Â»  " + PluginStrings.SCOREBOARD_EPISODE.toString() + ChatColor.GRAY + episode);
-		//fullLine = infoObjective.getScore(ChatColor.GRAY + "Â§m                                ");
+		//timer = infoObjective.getScore( ChatColor.GRAY + "  »  " + PluginStrings.SCOREBOARD_TIME_LEFT.toString() + ChatColor.GRAY + minutes + ":" + seconds);
+		//totalTime = infoObjective.getScore( ChatColor.GRAY + "  »  " + PluginStrings.SCOREBOARD_TOTAL_TIME.toString() + ChatColor.GRAY + total);
+		//episodeScore = infoObjective.getScore( ChatColor.GRAY + "  »  " + PluginStrings.SCOREBOARD_EPISODE.toString() + ChatColor.GRAY + episode);
+		//fullLine = infoObjective.getScore(ChatColor.GRAY + "§m                                ");
 		//blankLines.addAll(Arrays.asList(infoObjective.getScore(""), infoObjective.getScore(" "), infoObjective.getScore("  "), infoObjective.getScore("   "), infoObjective.getScore("    "), infoObjective.getScore("     ")));
 		//blankLines.get(0).setScore(8);
 		
@@ -74,6 +77,8 @@ public class ScorebrdManager {
 		}
 	}
 
+	/* Changes the sidebar title
+	* @param newTitle - the new title of the sidebar objective */
 	static void refreshSidebarTitle(String newTitle) {
 		infoObjective.setDisplayName(newTitle);
 	}
