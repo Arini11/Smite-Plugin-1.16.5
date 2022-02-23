@@ -134,6 +134,16 @@ public class TeamsManager {
 		}
 		return equips;
 	}
+	
+	public List<String> getEquipsLlista() {
+		List<String> llista = new ArrayList<String>();
+		if(!teamsConfig.getConfigurationSection("teams").getKeys(false).isEmpty()) {
+			for(String equip : teamsConfig.getConfigurationSection("teams").getKeys(false)) {
+				llista.add(equip);
+			}
+		}
+		return llista;
+	}
 
 	public String treureJugador(String jugador, String equip) {
 		String error = "ok";
@@ -160,6 +170,15 @@ public class TeamsManager {
 				llista = teamsConfig.getConfigurationSection("teams." + equip).getStringList("jugadors");
 				llista.remove(jugador);
 				return llista;
+			}
+		}
+		return new ArrayList<String>();
+	}
+	
+	public List<String> getCompanysFull(String equip) {
+		for(String e : teamsConfig.getConfigurationSection("teams").getKeys(false)) {
+			if(e.equalsIgnoreCase(equip)) {
+				return teamsConfig.getConfigurationSection("teams." + e).getStringList("jugadors");
 			}
 		}
 		return new ArrayList<String>();

@@ -6,7 +6,7 @@ description: prova eclipse
 api-version: 1.16
 
 commands:
-  teams:
-    description: comando teams
-  skull:
-    description: obtenir caps de jugadors
+  uhc:
+    description: comando principal
+  prova:
+    description: prova
