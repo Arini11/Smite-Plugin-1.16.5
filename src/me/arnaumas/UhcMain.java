@@ -2,14 +2,12 @@ package me.arnaumas;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.arnaumas.items.CustomRecipes;
-import me.arnaumas.match.ScorebrdManager;
 import me.arnaumas.commands.CommandsFacade;
 import me.arnaumas.events.EventsFacade;
 
@@ -31,7 +29,6 @@ public class UhcMain extends JavaPlugin{
         CustomRecipes recipes = new CustomRecipes();
         //ScorebrdManager.setUp();
         runnable();
-<<<<<<< HEAD
         //Load the config
         SLoadConfig();
 	}
@@ -46,10 +43,7 @@ public class UhcMain extends JavaPlugin{
         }
     }
 	
-=======
-	}
-	
->>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
+
 	public void runnable() {
 		 new BukkitRunnable() {
 

@@ -9,10 +9,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
-<<<<<<< HEAD
 import org.bukkit.Sound;
-=======
->>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
+
 import org.bukkit.block.BlockFace;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
@@ -23,10 +21,10 @@ import org.bukkit.util.BlockIterator;
 import org.bukkit.util.Vector;
 
 import me.arnaumas.UhcMain;
-<<<<<<< HEAD
+
 import me.arnaumas.events.EventsFacade;
-=======
->>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
+
+
 
 import org.bukkit.World;
 
@@ -34,7 +32,7 @@ public class RaycastCommand {
 	private static CommandSender staticSender;
 	private static World world;
 	
-<<<<<<< HEAD
+
 	public static void tpUllEnder(CommandSender sender) {
 		try {
 		staticSender = sender;
@@ -66,8 +64,7 @@ public class RaycastCommand {
 		}
 	}
 	
-=======
->>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
+
 	public static void proves(CommandSender sender) {
 		try {
 		staticSender = sender;
@@ -88,10 +85,7 @@ public class RaycastCommand {
 				for(Entity e : loc.getChunk().getEntities()) {
 					if(e.getLocation().distance(loc) < 2.0) {
 						if(!e.equals(p)) {
-<<<<<<< HEAD
-=======
 							System.out.println("");
->>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 							e.setFireTicks(20*5);
 							world.spawnParticle(Particle.EXPLOSION_NORMAL,loc,10,0,0,0,5);
 						}
@@ -115,10 +109,7 @@ public class RaycastCommand {
 			e.printStackTrace();
 		}
 	}
-<<<<<<< HEAD
 	
-=======
->>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 	public static void run(CommandSender sender) {
 		staticSender = sender;
 		if (!(sender instanceof Player)) {
