@@ -31,6 +31,7 @@ public class UhcMain extends JavaPlugin{
         CustomRecipes recipes = new CustomRecipes();
         //ScorebrdManager.setUp();
         runnable();
+<<<<<<< HEAD
         //Load the config
         SLoadConfig();
 	}
@@ -45,6 +46,10 @@ public class UhcMain extends JavaPlugin{
         }
     }
 	
+=======
+	}
+	
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 	public void runnable() {
 		 new BukkitRunnable() {
 

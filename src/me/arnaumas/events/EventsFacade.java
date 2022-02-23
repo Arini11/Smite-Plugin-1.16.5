@@ -5,10 +5,14 @@ import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+<<<<<<< HEAD
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
+=======
+import org.bukkit.Material;
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,15 +23,23 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+<<<<<<< HEAD
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+=======
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+<<<<<<< HEAD
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.arnaumas.UhcMain;
 import me.arnaumas.commands.Comandos;
+=======
+
+import me.arnaumas.UhcMain;
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 import me.arnaumas.commands.RaycastCommand;
 import me.arnaumas.commands.TpCommand;
 import me.arnaumas.items.ItemManager;
@@ -48,6 +60,7 @@ public class EventsFacade implements Listener {
 			ScorebrdManager.updateHealth();
 		}
 	}
+<<<<<<< HEAD
 	
 	// SWEEP ATTACK ---> TP   NO ESBORRAR
 	public static void efecteParticules1(Player p) {
@@ -189,6 +202,8 @@ public class EventsFacade implements Listener {
 						
 		}.runTaskTimer(UhcMain.getInstance(), 0, 1);
 	}
+=======
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 
 	@EventHandler
 	public void onPlayerHeal(EntityRegainHealthEvent event) {
@@ -259,6 +274,7 @@ public class EventsFacade implements Listener {
 	         } else if(item != null && item.getType() == Material.GOLDEN_HOE) {
 	        	 RaycastCommand.proves(event.getPlayer());
 	         }
+<<<<<<< HEAD
 	     } else if(action == Action.LEFT_CLICK_AIR) {
 	    	 EquipmentSlot e = event.getHand();
 		     if (!e.equals(EquipmentSlot.HAND)) { // HAND és la mà dreta i OFF_HAND l'esquerre.  
@@ -267,6 +283,8 @@ public class EventsFacade implements Listener {
 		     if(item != null && item.getType() == Material.ENDER_EYE) {
 	        	 RaycastCommand.tpUllEnder(event.getPlayer());
 	         }
+=======
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 	     }
 
 	}
@@ -274,7 +292,10 @@ public class EventsFacade implements Listener {
 	@EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Bukkit.broadcastMessage(UhcMain.color("§aBon dia tingui "+event.getPlayer().getName()));
+<<<<<<< HEAD
         Comandos.skin(event.getPlayer());
+=======
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
         //createScoreboard(event.getPlayer());
     }
 	

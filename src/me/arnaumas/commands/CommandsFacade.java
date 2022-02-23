@@ -50,10 +50,13 @@ public class CommandsFacade implements TabExecutor {
 						RaycastCommand.proves(sender);
 						break;
 					}
+<<<<<<< HEAD
 					case "skin":{
 						Comandos.skin(sender);
 						break;
 					}
+=======
+>>>>>>> 62233b12a59bca7914591d72ffe08fb120cce5a7
 					default: {
 						if(sender instanceof Player) {
 							((Player) sender).getPlayer().sendMessage(ChatColor.RED + "No s'ha trobat el comando");
