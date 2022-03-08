@@ -16,12 +16,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.BlockIterator;
 import org.bukkit.util.Vector;
 
 import me.arnaumas.UhcMain;
-
+import me.arnaumas.altres.Laser;
+import me.arnaumas.altres.Laser.GuardianLaser;
 import me.arnaumas.events.EventsFacade;
 
 
@@ -64,7 +67,37 @@ public class RaycastCommand {
 		}
 	}
 	
+	// Raig verd
+		public static void torre(CommandSender sender) {
+			staticSender = sender;
+			try {
+			Player p = (Player) sender;
+			world = p.getWorld();
 
+			Location torre = new Location(world, -54, 73, 132);
+			Location jugador = p.getLocation();
+			
+			double distance = torre.distance(jugador);
+		    Vector p1 = torre.toVector();
+		    Vector p2 = jugador.toVector();
+		    Vector vector = p2.clone().subtract(p1).normalize().multiply(0.2);
+		    double length = 0;
+		    if(distance < 10) {
+			    for (; length < distance; p1.add(vector)) {
+			        world.spawnParticle(Particle.WATER_BUBBLE, p1.getX(), p1.getY(), p1.getZ(), 10);
+			        p.setFireTicks(20);
+			    	//Laser laser = new GuardianLaser(torre, jugador, 1, (int)distance);
+			    	//laser.start(UhcMain.getPlugin(null));
+			    	length += 0.2;
+			    }
+		    }
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	
+
+	// Raig verd
 	public static void proves(CommandSender sender) {
 		try {
 		staticSender = sender;

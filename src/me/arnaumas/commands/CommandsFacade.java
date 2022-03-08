@@ -12,6 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
+import me.PauMAVA.MojangAPI.MojangAPI;
 import me.arnaumas.UhcMain;
 
 
@@ -51,7 +52,14 @@ public class CommandsFacade implements TabExecutor {
 						break;
 					}
 					case "skin":{
-						Comandos.skin(sender);
+						MojangAPI mj = new MojangAPI();
+						//SkinChanger sc = new SkinChanger();
+						//sc.cachePlayerInfo();
+						//sc.rotateSkinsAsync();
+						break;
+					}
+					case "torre":{
+						RaycastCommand.torre(sender);
 						break;
 					}
 					default: {
@@ -67,7 +75,8 @@ public class CommandsFacade implements TabExecutor {
 					}
 				}
 			} catch(Exception e) {
-				plugin.getLogger().severe(e.getCause().toString());
+				//plugin.getLogger().severe(e.getCause().toString());
+				e.printStackTrace();
 				return false;
 			}
 			return true;

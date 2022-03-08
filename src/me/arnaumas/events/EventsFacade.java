@@ -19,6 +19,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
@@ -217,6 +218,15 @@ public class EventsFacade implements Listener {
     }
 	
 	@EventHandler
+	public void onMoures(PlayerMoveEvent event) {
+		RaycastCommand.torre(event.getPlayer());
+        /*Bukkit.broadcastMessage("X: "+event.getPlayer().getLocation().getDirection().normalize().getX()
+        		+"Y: "+event.getPlayer().getLocation().getDirection().normalize().getY()
+        		+"Z: "+event.getPlayer().getLocation().getDirection().normalize().getZ());
+		*/
+	}
+	
+	@EventHandler
 	public void onPlayerClicks(PlayerInteractEvent event) {
 	    Player player = event.getPlayer();
 	    Action action = event.getAction();
@@ -271,6 +281,7 @@ public class EventsFacade implements Listener {
 	     }
 
 	}
+	
 	
 	@EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {

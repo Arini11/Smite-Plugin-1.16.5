@@ -18,9 +18,7 @@ public class Comandos {
 	
 	public static void skin(CommandSender sender) {
 		Player p = (Player) sender;
-		
-		System.out.println("correcte");
-		
+				
 		//Init the player's connection
         GameProfile profile = ((CraftPlayer)p).getHandle().getProfile();
         PlayerConnection connection = ((CraftPlayer)p).getHandle().playerConnection;
