@@ -1,6 +1,6 @@
 <!-- README escrit a partir d'aquest artícle: https://towardsdatascience.com/how-to-write-an-awesome-readme-68bf4be91f8b -->
 <!-- Add banner here -->
-![Banner](smite-logo.png)
+![Banner](img/smite-logo.png)
 
 # SmitePlugin
 
@@ -152,5 +152,5 @@ https://www.youtube.com/channel/UC7wRVtfHzDwSuL1DJ5qy9Ag
  - /skull 
  - /skull *jugador1*
 # Disseny codi
-![Diagrama plugin uhc](imatge-github-diagrama-plugin-uhc.png)
+![Diagrama plugin uhc](img/imatge-github-diagrama-plugin-uhc.png)
 -->
