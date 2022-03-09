@@ -10,7 +10,7 @@ import me.arnaumas.match.TeamsManager;
 public class TeamsCommand {
 	
 	private static TeamsManager teams = TeamsManager.getInstance();
-	private final static String TMS = "§3[TEAMS]§r ";
+	private final static String TMS = "ï¿½3[TEAMS]ï¿½r ";
 	
 	public static void run(CommandSender sender, String[] args) {
 		
@@ -37,7 +37,7 @@ public class TeamsCommand {
 					}
 					case "delete": {
 						if(!teams.eliminarEquip(args[2])) {
-							sender.sendMessage("§4No existeix cap equip amb aquest nom");
+							sender.sendMessage("ï¿½4No existeix cap equip amb aquest nom");
 						}
 						teams.saveConfig();
 						break;
@@ -49,7 +49,7 @@ public class TeamsCommand {
 					case "join": {
 						String msgError = teams.afegirJugador(args[2], args[3]);
 						if(!msgError.equals("")) 
-							sender.sendMessage("§4"+msgError);
+							sender.sendMessage("ï¿½4"+msgError);
 						teams.saveConfig();
 						break;
 					}
@@ -57,18 +57,18 @@ public class TeamsCommand {
 						Bukkit.getLogger().severe("leaveeee");
 						String msgError = teams.treureJugador(args[2], args[3]);
 						if(!msgError.equals("")) 
-							Bukkit.getLogger().severe("§4"+msgError);
+							Bukkit.getLogger().severe("ï¿½4"+msgError);
 						teams.saveConfig();
 						break;
 					}
 					default: {
-						sender.sendMessage("§4No es reconeix el comando");
+						sender.sendMessage("ï¿½4No es reconeix el comando");
 					}
 				}
 			}
 		// SI S'EXECUTA DES DE CONSOLA
 		} else {
-			Bukkit.getLogger().severe("§4No es pot executar des de consola");
+			Bukkit.getLogger().severe("ï¿½4No es pot executar des de consola");
 		}
 	}
 

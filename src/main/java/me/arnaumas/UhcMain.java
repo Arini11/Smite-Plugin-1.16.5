@@ -43,7 +43,7 @@ public class UhcMain extends JavaPlugin{
         //  Load the config
         try {
             saveDefaultConfig();
-            Bukkit.getConsoleSender().sendMessage("[§cSkin Changer§r] §aCONFIG LOAD SUCCESFULLY");
+            Bukkit.getConsoleSender().sendMessage("[Â§cSkin ChangerÂ§r] Â§aCONFIG LOAD SUCCESFULLY");
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -58,8 +58,8 @@ public class UhcMain extends JavaPlugin{
 			public void run() {
 				for (LivingEntity e : getServer().getWorld("world").getLivingEntities()) {
 					if(e.getType().equals( EntityType.ZOMBIE )) {
-						e.setCustomName(e.getType() + "§4[" + ChatColor.RED + e.getHealth()
-							+ "§8/§c" + e.getMaxHealth() + "§4]");
+						e.setCustomName(e.getType() + "Â§4[" + ChatColor.RED + e.getHealth()
+							+ "Â§8/Â§c" + e.getMaxHealth() + "Â§4]");
 						e.setCustomNameVisible(true);
 					}
 

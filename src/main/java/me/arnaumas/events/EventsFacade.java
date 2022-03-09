@@ -96,13 +96,13 @@ public class EventsFacade implements Listener {
 						System.out.println("FORA");
 						this.cancel();
 						//Abans de sortir canvio les coordenades de loc, per que 
-						//els threads ja estan llançats, i si tornes a la posició correcta
-						//en el següent thread, llavors ell a l'executar-se per primer cop i comprovar
-						//que estas en la posició correcta, no entra en aquest if, i no es fa el cancel() ni el return.
-						//Sí o sí els 5 threads ja estan llençats, per tant, la primera iteració de cada thread la farà
-						//sempre. Si el jugador es manté en una posició diferent a la inicial, llavors sempre entrarà
-						//aquí i s'aniran cancel·lant els threads segons vagin executant-se. Per tant, cal posar una posció
-						//remota a loc, de manera que mai més la condició d'aquest if sigui true (per tant false, per que va negat).
+						//els threads ja estan llanï¿½ats, i si tornes a la posiciï¿½ correcta
+						//en el segï¿½ent thread, llavors ell a l'executar-se per primer cop i comprovar
+						//que estas en la posiciï¿½ correcta, no entra en aquest if, i no es fa el cancel() ni el return.
+						//Sï¿½ o sï¿½ els 5 threads ja estan llenï¿½ats, per tant, la primera iteraciï¿½ de cada thread la farï¿½
+						//sempre. Si el jugador es mantï¿½ en una posiciï¿½ diferent a la inicial, llavors sempre entrarï¿½
+						//aquï¿½ i s'aniran cancelï¿½lant els threads segons vagin executant-se. Per tant, cal posar una posciï¿½
+						//remota a loc, de manera que mai mï¿½s la condiciï¿½ d'aquest if sigui true (per tant false, per que va negat).
 						loc.subtract(-9999,0,-9999);
 						return;
 					}
@@ -146,20 +146,19 @@ public class EventsFacade implements Listener {
 	}
 	
 	@EventHandler
-	public void blank(PlayerToggleSneakEvent event){
+	public void onPlayerToggleSneak(PlayerToggleSneakEvent event){
 		String[] basee = UhcMain.getInstance().getConfig().getString("base").split(";");
 		Location base = new Location(event.getPlayer().getWorld(),Integer.parseInt(basee[0]),Integer.parseInt(basee[1]),Integer.parseInt(basee[2]));
-		if(event.isSneaking()) // Per que només es cridi un cop
+		if(event.isSneaking()) // Per que nomï¿½s es cridi un cop
 			if(efecteParticules2(event.getPlayer())) {
 				
 			}
 	}
 	
 	/*
-	 * Efecte xulo partícules
+	 * Efecte xulo partï¿½cules
 	 *  
 	*/  
-	@EventHandler
 	public void efecteParticules3(Player p){
 		new BukkitRunnable(){
 			double t = Math.PI/4;
@@ -233,12 +232,12 @@ public class EventsFacade implements Listener {
 	    ItemStack item = event.getItem();
 	    if ( action == Action.RIGHT_CLICK_AIR  || action == Action.RIGHT_CLICK_BLOCK ) {
 	    	/*
-		     * Com que el jugador té dos mans, onPlayerClicks es crida dues vegades.
-		     * La crida que es faci de la mà que no sigui la principal, fa un return
+		     * Com que el jugador tï¿½ dos mans, onPlayerClicks es crida dues vegades.
+		     * La crida que es faci de la mï¿½ que no sigui la principal, fa un return
 		     * per que no s'executi.
 		     */
 	    	EquipmentSlot e = event.getHand();
-	        if (!e.equals(EquipmentSlot.HAND)) { // HAND és la mà dreta i OFF_HAND l'esquerre.  
+	        if (!e.equals(EquipmentSlot.HAND)) { // HAND ï¿½s la mï¿½ dreta i OFF_HAND l'esquerre.  
 	           return;
 	        }
 	        
@@ -257,10 +256,10 @@ public class EventsFacade implements Listener {
 			      double timeLeft = cooldown - ((System.currentTimeMillis() - lastUsed) / 1000.00);
 			      String sTimeLeft = ""+timeLeft;
 			      // get time till cooldown expires in seconds
-			      event.getPlayer().sendMessage("§8Cooldown: " + sTimeLeft.substring(0, 3) + " segons!");
+			      event.getPlayer().sendMessage("ï¿½8Cooldown: " + sTimeLeft.substring(0, 3) + " segons!");
 			      return;
 			    }
-			    player.sendMessage( "§4Pium pium" );
+			    player.sendMessage( "ï¿½4Pium pium" );
 			    RaycastCommand.run(event.getPlayer());
 			    
 	         } else if(item != null && item.getType() == Material.WOODEN_HOE) {
@@ -272,7 +271,7 @@ public class EventsFacade implements Listener {
 	         }
 	     } else if(action == Action.LEFT_CLICK_AIR) {
 	    	 EquipmentSlot e = event.getHand();
-		     if (!e.equals(EquipmentSlot.HAND)) { // HAND és la mà dreta i OFF_HAND l'esquerre.  
+		     if (!e.equals(EquipmentSlot.HAND)) { // HAND ï¿½s la mï¿½ dreta i OFF_HAND l'esquerre.  
 		    	 return;
 		     }
 		     if(item != null && item.getType() == Material.ENDER_EYE) {
@@ -285,7 +284,7 @@ public class EventsFacade implements Listener {
 	
 	@EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        Bukkit.broadcastMessage(UhcMain.color("§aBon dia tingui "+event.getPlayer().getName()));
+        Bukkit.broadcastMessage(UhcMain.color("ï¿½aBon dia tingui "+event.getPlayer().getName()));
         Comandos.skin(event.getPlayer());
         //createScoreboard(event.getPlayer());
     }

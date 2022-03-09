@@ -4,9 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Iterator;
 import java.util.Map.Entry;
-import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -49,7 +47,7 @@ public class RandomTeleports {
 	public void prova() {
 		teamsPerCostat();
 		assignarCoords();
-		//De moment només imprimir per xat
+		//De moment nomï¿½s imprimir per xat
 		for(String s : TeamsManager.getInstance().getEquipsLlista()) {
 			tpEquips(s);
 		}
@@ -79,7 +77,7 @@ public class RandomTeleports {
 
 	private void assignarCoords() {
 		//Assignar equips a costats
-		for (Map.Entry<String, Character> entrada : costatEquip.entrySet()) {
+		for (Entry<String, Character> entrada : costatEquip.entrySet()) {
 			if(nEquipsCostat.get(new Character('N')) > 0) {
 				costatEquip.put(entrada.getKey(), 'N');
 				nEquipsCostat.put('N', nEquipsCostat.get('N')-1);
@@ -125,7 +123,7 @@ public class RandomTeleports {
 	}
 
 	private void teamsPerCostat() {
-		// Relació de cada equip amb un costat
+		// Relaciï¿½ de cada equip amb un costat
 		/*
 		 * { equip1 , O } Equip1 Oest
 		 * { equip2 , S } Equip2 Sud

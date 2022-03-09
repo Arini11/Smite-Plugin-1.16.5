@@ -34,7 +34,7 @@ public class StartCommand {
 		}
 		for(Player p: Bukkit.getOnlinePlayers()) { 
 			p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 100, 1);
-			p.sendTitle(ChatColor.DARK_AQUA + "" + ChatColor.ITALIC + "INICI" , ChatColor.AQUA + "Passi-ho bé", 0, 5*20, 1*20);
+			p.sendTitle(ChatColor.DARK_AQUA + "" + ChatColor.ITALIC + "INICI" , ChatColor.AQUA + "Passi-ho bï¿½", 0, 5*20, 1*20);
 		}
 		ScorebrdManager.setUp();
 	}

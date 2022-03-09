@@ -31,12 +31,12 @@ public class TeamsManager {
 		if(!fitxer.exists()) {
 			try {
 				fitxer.createNewFile();
-				uhc.getLogger().info(TMS+"Fitxer de configuració generat correctament.");
+				uhc.getLogger().info(TMS+"Fitxer de configuraciï¿½ generat correctament.");
 				loadDefaults();
 				saveConfig();
 			} catch(IOException e) {
 				e.printStackTrace();
-				uhc.getLogger().severe(TMS+"No s'ha pogut guardar el fitxer de configuració.");
+				uhc.getLogger().severe(TMS+"No s'ha pogut guardar el fitxer de configuraciï¿½.");
 			}
 		}
 	}
@@ -68,7 +68,7 @@ public class TeamsManager {
 			teamsConfig.createSection("teams." + equip).set("jugadors", null);
 			teamsConfig.getConfigurationSection("teams." + equip).set("mida", 2);
 			teamsConfig.getConfigurationSection("teams." + equip).set("color", null);
-			Bukkit.broadcastMessage(TMS+"Equip §5"+equip+"§r creat!");
+			Bukkit.broadcastMessage(TMS+"Equip ï¿½5"+equip+"ï¿½r creat!");
 			return true;
 		} else {
 			return false;
@@ -79,14 +79,14 @@ public class TeamsManager {
 	public void setColorEquip(String equip, String color) {
 		if(teamsConfig.isSet("teams." + equip)) {
 			teamsConfig.getConfigurationSection("teams." + equip).set("color", color);
-			Bukkit.broadcastMessage(TMS+"Color de l'equip §5"+equip+"§r actualitzat!");
+			Bukkit.broadcastMessage(TMS+"Color de l'equip ï¿½5"+equip+"ï¿½r actualitzat!");
 		}
 	}
 	
 	public boolean eliminarEquip(String equip) {
 		if(teamsConfig.getConfigurationSection("teams." + equip) != null) {
 			teamsConfig.set("teams." + equip, null);
-			Bukkit.broadcastMessage(TMS+"Equip §5"+equip+"§r eliminat!");
+			Bukkit.broadcastMessage(TMS+"Equip ï¿½5"+equip+"ï¿½r eliminat!");
 			return true;
 		} else return false;
 	}
@@ -101,21 +101,21 @@ public class TeamsManager {
 				System.out.println("ok");
 				ls.add(jugador);
 				teamsConfig.getConfigurationSection("teams." + equip).set("jugadors", ls);
-				Bukkit.broadcastMessage(TMS+"Jugador §5"+jugador+"§r afegit a l'equip §5"+equip);
+				Bukkit.broadcastMessage(TMS+"Jugador ï¿½5"+jugador+"ï¿½r afegit a l'equip ï¿½5"+equip);
 				return error;
 			} else {
 				uhc.getLogger().info("La llista de jugadors membres de l'equip existeix");
 				List<String> ls = teamsConfig.getConfigurationSection("teams." + equip).getStringList("jugadors");
 				if(ls.size() == teamsConfig.getConfigurationSection("teams." + equip).getInt("mida")) {
-					error = "L'equip és ple";
+					error = "L'equip ï¿½s ple";
 				} else {
 					ls.add(jugador);
 					teamsConfig.getConfigurationSection("teams." + equip).set("jugadors", ls);
-					Bukkit.broadcastMessage(TMS+"Jugador §5"+jugador+"§r afegit a l'equip §5"+equip);
+					Bukkit.broadcastMessage(TMS+"Jugador ï¿½5"+jugador+"ï¿½r afegit a l'equip ï¿½5"+equip);
 				}
 			}
 		} else {
-			error = "El jugador ja està registrat";
+			error = "El jugador ja estï¿½ registrat";
 		}
 		return error;
 	}
@@ -123,10 +123,10 @@ public class TeamsManager {
 	public String getEquips() {
 		String equips = "";
 		if(teamsConfig.getConfigurationSection("teams").getKeys(false).isEmpty()) {
-			equips = "§5Encara no hi ha equips!§r  ";
+			equips = "ï¿½5Encara no hi ha equips!ï¿½r  ";
 		} else {
 			for(String equip : teamsConfig.getConfigurationSection("teams").getKeys(false)) {
-				equips += "§5"+equip+"§r";
+				equips += "ï¿½5"+equip+"ï¿½r";
 				for(String jugador : teamsConfig.getConfigurationSection("teams." + equip).getStringList("jugadors")){
 					equips += "\n   -"+jugador+"\n";
 				}
@@ -152,13 +152,13 @@ public class TeamsManager {
 		} else {
 			ConfigurationSection section = teamsConfig.getConfigurationSection("teams." + equip);
 			if(section.getStringList("jugadors") == null || !section.getStringList("jugadors").contains(jugador)) {
-				error = "El jugador "+jugador+" no està dins de l'equip";
+				error = "El jugador "+jugador+" no estï¿½ dins de l'equip";
 			}
 			List<String> ls = teamsConfig.getConfigurationSection("teams." + equip).getStringList("jugadors");
 			ls.remove(jugador);
 			teamsConfig.getConfigurationSection("teams." + equip).set("jugadors", ls);
 			Bukkit.getLogger().severe(ls.toString());
-			Bukkit.broadcastMessage(TMS+"Jugador §5"+jugador+"§r tret de l'equip §5"+equip);				
+			Bukkit.broadcastMessage(TMS+"Jugador ï¿½5"+jugador+"ï¿½r tret de l'equip ï¿½5"+equip);				
 		}
 		return error;	
 	}	

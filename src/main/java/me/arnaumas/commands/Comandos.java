@@ -2,6 +2,9 @@ package me.arnaumas.commands;
 
 import java.util.Random;
 
+import me.arnaumas.UhcMain;
+import net.minecraft.server.v1_16_R3.PacketPlayOutPlayerInfo;
+import net.minecraft.server.v1_16_R3.PlayerConnection;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
@@ -9,10 +12,7 @@ import org.bukkit.entity.Player;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
-import me.arnaumas.UhcMain;
-import net.minecraft.server.v1_16_R3.PacketPlayOutPlayerInfo;
-import net.minecraft.server.v1_16_R3.PacketPlayOutPlayerInfo.EnumPlayerInfoAction;
-import net.minecraft.server.v1_16_R3.PlayerConnection;
+
 
 public class Comandos {
 	
@@ -24,10 +24,10 @@ public class Comandos {
         PlayerConnection connection = ((CraftPlayer)p).getHandle().playerConnection;
 
         //  Send the packets
-        connection.sendPacket(new PacketPlayOutPlayerInfo(EnumPlayerInfoAction.REMOVE_PLAYER, ((CraftPlayer)p).getHandle()));
+        connection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.REMOVE_PLAYER, ((CraftPlayer)p).getHandle()));
         profile.getProperties().removeAll("textures");
         profile.getProperties().put("textures", getSkin(UhcMain.getInstance().getConfig().getString("mode")));
-        connection.sendPacket(new PacketPlayOutPlayerInfo(EnumPlayerInfoAction.ADD_PLAYER, ((CraftPlayer)p).getHandle()));
+        connection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, ((CraftPlayer)p).getHandle()));
 	}
 	
 	private static Property getSkin(String mode) {

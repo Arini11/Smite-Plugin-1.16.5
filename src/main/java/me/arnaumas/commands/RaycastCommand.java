@@ -176,12 +176,12 @@ public class RaycastCommand {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		double distancia = 0; // Distancia entre jugador i destí raycast
+		double distancia = 0; // Distancia entre jugador i destï¿½ raycast
 		Location l1 = p.getLocation(); // Coords jugador
 		Location l2; // Coords blocs que s'aniran comprovant fins a trobar un que no sigui aire
-		double x,z; // X i Z del jugador, per fer més clar el codi
-		BlockFace facing = p.getFacing(); // Direcció a on està mirant el jugador
-		Material mat = Material.AIR; // Material del bloc que s'està mirant
+		double x,z; // X i Z del jugador, per fer mï¿½s clar el codi
+		BlockFace facing = p.getFacing(); // Direcciï¿½ a on estï¿½ mirant el jugador
+		Material mat = Material.AIR; // Material del bloc que s'estï¿½ mirant
 		boolean trobat = false; // Flag
 		if(facing == BlockFace.NORTH) {
 			List<Location> coords = getCoordsSetblocks(l1, 'N', 5);
@@ -206,11 +206,11 @@ public class RaycastCommand {
 		}
 		
 		//sender.sendMessage("Bloc: "+mat);
-		//sender.sendMessage("Distància: "+distancia);
+		//sender.sendMessage("Distï¿½ncia: "+distancia);
 	}
 	
 	/**
-	 * @param coords LLista de posicions on es farà l'animació
+	 * @param coords LLista de posicions on es farï¿½ l'animaciï¿½
 	 */
 	static void animacio(List<Location> coords) {
 		new BukkitRunnable() {
@@ -242,7 +242,7 @@ public class RaycastCommand {
 									coords.get(i2).getBlock().setType(Material.STONE_BRICKS);
 								else 
 									coords.get(i2).getBlock().setType(Material.STONE_BRICK_SLAB);
-								// Partícules
+								// Partï¿½cules
 								world.spawnParticle(Particle.LAVA,coords.get(i2),6,0.3,0.3,0.3,50);
 								// Mirar si exsiteix un mob
 								for(Entity e: world.getNearbyEntities(coords.get(i2), 10, 5, 10)) {
@@ -286,7 +286,7 @@ public class RaycastCommand {
 					 * A TENIR EN COMPTE!!!
 					 * Hauria de guardar-me en un hash map o alguna altra cosa
 					 * els blocs que hi havia originalment per poder-los restablir
-					 * en acabar l'animació. Perquè si no em carregaré el
+					 * en acabar l'animaciï¿½. Perquï¿½ si no em carregarï¿½ el
 					 * mapa posant aire on abans potser hi habia uns blocs.
 					 */
 					for(int i=0;i<coords.size();i++) {
@@ -309,8 +309,8 @@ public class RaycastCommand {
 	/**
 	 * 
 	 * @param l1 Coords inicials (jugador)
-	 * @param f N, S, W, E (direcció on s'està mirant)
-	 * @param n Allargada en nº de blocs de l'animació 
+	 * @param f N, S, W, E (direcciï¿½ on s'estï¿½ mirant)
+	 * @param n Allargada en nï¿½ de blocs de l'animaciï¿½ 
 	 * @return
 	 */
 	private static List<Location> getCoordsSetblocks(Location l1, char f, int n) {
@@ -318,7 +318,7 @@ public class RaycastCommand {
 		double x,z;
 		if(f == 'N') {
 			//restar Z
-			z = l1.getZ() - 1; // -1 per què no comenci just al bloc del jugador
+			z = l1.getZ() - 1; // -1 per quï¿½ no comenci just al bloc del jugador
 			while(n-- > 0) {
 				coords.add(new Location(world, l1.getX(), l1.getY(), z--));
 			}

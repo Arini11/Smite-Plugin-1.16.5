@@ -34,7 +34,7 @@ public class TpCommand {
 		}
 		Player p = (Player) sender;
 		world = p.getWorld();
-		sender.sendMessage( "§4Fiuuum" );
+		sender.sendMessage( "ï¿½4Fiuuum" );
 		try {
 				 
 			for(double i=0;i<3;i=i+0.05) {
@@ -51,7 +51,7 @@ public class TpCommand {
 				    }
 				}.runTaskLater(UhcMain.getInstance(), (long) (5+ 2*i));				
 			}
-			sender.sendMessage( "§4Fiuuum" );
+			sender.sendMessage( "ï¿½4Fiuuum" );
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -65,7 +65,7 @@ public class TpCommand {
 		}
 		Player p = (Player) sender;
 		world = p.getWorld();
-		sender.sendMessage( "§4ULTI" );
+		sender.sendMessage( "ï¿½4ULTI" );
 		try {
 			List<Location> coords = getCoordsSetblocks(p.getLocation(), 'N', 5);
 			animacio(coords);
@@ -75,7 +75,7 @@ public class TpCommand {
 	}
 	
 	/**
-	 * @param coords LLista de posicions on es farà l'animació
+	 * @param coords LLista de posicions on es farï¿½ l'animaciï¿½
 	 */
 	static void animacio(List<Location> coords) {
 		new BukkitRunnable() {
@@ -102,12 +102,12 @@ public class TpCommand {
 								Location locAnt = coords.get(i2);
 								// Setblocks
 								//coords.get(i2).getBlock().setType(Material.STONE);
-								// locAnt ha de ser -1, no ho puc manternir aquí pq es reestableix tota la estona
+								// locAnt ha de ser -1, no ho puc manternir aquï¿½ pq es reestableix tota la estona
 								
 								locAnt.setZ(coords.get(i2).getZ() + 1);
 								//locAnt.getBlock().setType(Material.GLASS);
 								
-								// Partícules
+								// Partï¿½cules
 								world.spawnParticle(Particle.LAVA,coords.get(i2),15,0.3,0.3,0.3,50);
 								// Mirar si exsiteix un mob
 								for(Entity e: world.getNearbyEntities(coords.get(i2), 4, 4, 4)) {
@@ -162,8 +162,8 @@ public class TpCommand {
 	/**
 	 * 
 	 * @param l1 Coords inicials (jugador)
-	 * @param f N, S, W, E (direcció on s'està mirant)
-	 * @param n Allargada en nº de blocs de l'animació 
+	 * @param f N, S, W, E (direcciï¿½ on s'estï¿½ mirant)
+	 * @param n Allargada en nï¿½ de blocs de l'animaciï¿½ 
 	 * @return
 	 */
 	private static List<Location> getCoordsSetblocks(Location l1, char f, int n) {
@@ -172,7 +172,7 @@ public class TpCommand {
 		y = l1.getY() + 1;
 		if(f == 'N') {
 			//restar Z
-			z = l1.getZ() - 1; // -1 per què no comenci just al bloc del jugador
+			z = l1.getZ() - 1; // -1 per quï¿½ no comenci just al bloc del jugador
 			while(n-- > 0) {
 				coords.add(new Location(world, l1.getX(), y, z));
 				z--;

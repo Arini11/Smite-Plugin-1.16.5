@@ -4,15 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import me.arnaumas.altres.SkinChanger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
-import me.PauMAVA.MojangAPI.MojangAPI;
 import me.arnaumas.UhcMain;
 
 
@@ -52,10 +51,10 @@ public class CommandsFacade implements TabExecutor {
 						break;
 					}
 					case "skin":{
-						MojangAPI mj = new MojangAPI();
-						//SkinChanger sc = new SkinChanger();
-						//sc.cachePlayerInfo();
-						//sc.rotateSkinsAsync();
+						//SkinChangerAPI sc = new SkinChangerAPI();
+						SkinChanger sc = new SkinChanger();
+						sc.cachePlayerInfo();
+						sc.rotateSkinsAsync();
 						break;
 					}
 					case "torre":{
